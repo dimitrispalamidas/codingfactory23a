@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>ExceptionApp.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ExceptionApp.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">gr.aueb.cf.testbed</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+
+    <span class="s0">public class </span><span class="s1">ExceptionApp {</span>
+        <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+            <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">choice</span><span class="s0">;</span>
+
+            <span class="s0">do </span><span class="s1">{</span>
+                <span class="s1">displayMenu()</span><span class="s0">;</span>
+                <span class="s1">choice = getChoice(scanner)</span><span class="s0">;</span>
+
+                <span class="s0">try </span><span class="s1">{</span>
+                    <span class="s1">printChoice(choice)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">catch </span><span class="s1">(IllegalArgumentException e) {</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;Invalid choice. PLease give a number between 1 and 5&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">} </span><span class="s0">while </span><span class="s1">(choice != </span><span class="s3">5</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+
+        <span class="s0">public static void </span><span class="s1">displayMenu() {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Menu:&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;1. Option 1&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;2. Option 2&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;3. Option 3&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;4. Option 4&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;5. Exit&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.print(</span><span class="s2">&quot;Enter your choice: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">public static int </span><span class="s1">getChoice(Scanner scanner) {</span>
+            <span class="s0">while </span><span class="s1">(!scanner.hasNextInt()) {</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;Invalid input. Please enter a valid choice.(Int)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">scanner.nextLine()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">return </span><span class="s1">scanner.nextInt()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">public static void </span><span class="s1">printChoice(</span><span class="s0">int </span><span class="s1">choice) {</span>
+            <span class="s0">if </span><span class="s1">(choice &lt; </span><span class="s3">1 </span><span class="s1">|| choice &gt; </span><span class="s3">5</span><span class="s1">) {</span>
+                <span class="s0">throw new </span><span class="s1">IllegalArgumentException(</span><span class="s2">&quot;Invalid choice&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+            <span class="s1">System.out.println(</span><span class="s2">&quot;You have select : &quot; </span><span class="s1">+ choice)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+
+</pre>
+</body>
+</html>

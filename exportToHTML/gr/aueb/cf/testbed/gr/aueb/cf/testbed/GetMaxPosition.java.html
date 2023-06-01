@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>GetMaxPosition.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+GetMaxPosition.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">gr.aueb.cf.testbed</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">GetMaxPosition {</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s0">int</span><span class="s1">[] grades = {</span><span class="s2">4</span><span class="s0">, </span><span class="s2">8</span><span class="s0">, </span><span class="s2">10</span><span class="s0">, </span><span class="s2">4</span><span class="s0">, </span><span class="s2">6</span><span class="s0">, </span><span class="s2">2</span><span class="s0">, </span><span class="s2">1</span><span class="s0">, </span><span class="s2">4</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">maxPosition = </span><span class="s2">0</span><span class="s0">;</span>
+
+        <span class="s1">maxPosition = getMaxPosition(grades</span><span class="s0">, </span><span class="s2">0</span><span class="s0">, </span><span class="s1">grades.length - </span><span class="s2">1</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.printf(</span><span class="s3">&quot;Max Value; %d, Max position: %d&quot;</span><span class="s0">, </span><span class="s1">grades[maxPosition]</span><span class="s0">, </span><span class="s1">maxPosition + </span><span class="s2">1</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s4">// METHODOS</span>
+    <span class="s0">public static int </span><span class="s1">getMaxPosition (</span><span class="s0">int</span><span class="s1">[] arr</span><span class="s0">, int </span><span class="s1">low</span><span class="s0">, int </span><span class="s1">high) {</span>
+        <span class="s0">int </span><span class="s1">maxPosition = high</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">maxValue</span><span class="s0">;</span>
+
+        <span class="s0">if </span><span class="s1">((low &lt; </span><span class="s2">0</span><span class="s1">) || (high &gt; arr.length - </span><span class="s2">1</span><span class="s1">)) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Error in array dimensions&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s0">return </span><span class="s1">-</span><span class="s2">1</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">maxValue = arr[high]</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = high</span><span class="s0">; </span><span class="s1">i &gt;= low</span><span class="s0">; </span><span class="s1">i--) {</span>
+            <span class="s0">if </span><span class="s1">(arr[i] &gt; maxValue) {</span>
+                <span class="s1">maxPosition = i</span><span class="s0">;</span>
+                <span class="s1">maxValue = arr[i]</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s0">return </span><span class="s1">maxPosition</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
